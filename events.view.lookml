@@ -297,25 +297,41 @@
   - measure: post_count
     type: count_distinct 
     sql: ${meta_canonical_url}
-    view_label: "Measures"
+    view_label: "Metrics"
   
-  - measure: visitor_count
+  - measure: visitors
     type: count_distinct
     sql: ${visitor_site_id}
-    view_label: "Measures"
+    view_label: "Metrics"
+
+  - measure: visitors_mobile
+    type: count_distinct
+    sql: ${visitor_site_id}
+    filter: 
+      action: pageview
+      user_agent_devicetype: mobile
+    view_label: "Metrics"
+
+  - measure: visitors_desktop
+    type: count_distinct
+    sql: ${visitor_site_id}
+    filter: 
+      action: pageview
+      user_agent_devicetype: desktop
+    view_label: "Metrics"
   
-  - measure: network_visitor_count
+  - measure: network_visitors
     type: count_distinct
     sql: ${visitor_network_id}
-    view_label: "Measures"
+    view_label: "Metrics"
   
   - measure: total_engaged_time
     type: sum
     sql: ${engaged_time_inc}
-    view_label: "Measures"
+    view_label: "Metrics"
   
   - measure: average_engaged_time_per_visitor
     type: number
-    sql: ${total_engaged_time}::float/NULLIF(${visitor_count},0)
-    view_label: "Measures"
+    sql: ${total_engaged_time}::float/NULLIF(${visitors},0)
+    view_label: "Metrics"
   
