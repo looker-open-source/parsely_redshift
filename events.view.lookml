@@ -49,7 +49,7 @@
 
   - dimension: ip_country
     type: string
-    sql: ${TABLE}.ip_country
+    sql: CASE WHEN ${TABLE}.ip_country = 'United States' THEN 'United States of America' ELSE ${TABLE}.ip_country END
     view_label: "IP & Geo"
 
   - dimension: ip_latitude
@@ -73,6 +73,7 @@
   - dimension: ip_zipcode
     type: string
     sql: ${TABLE}.ip_zipcode
+    type: zipcode
     view_label: "IP & Geo"
 
   - dimension: meta_authors
@@ -333,5 +334,11 @@
   - measure: average_engaged_time_per_visitor
     type: number
     sql: ${total_engaged_time}::float/NULLIF(${visitors},0)
+    view_label: "Metrics"
+    value_format_name: decimal_2
+  
+  - measure: session_count
+    type: count_distinct
+    sql: ${session_id} ||'-' || ${visitor_site_id}
     view_label: "Metrics"
   
