@@ -117,6 +117,11 @@
     sql: ${TABLE}.ref_clean
     view_label: "Traffic Sources (Referrers)"
 
+  - dimension: referrer_category
+    type: string
+    sql: ${TABLE}.ref_category
+    view_label: "Traffic Sources (Referrers)"
+
   - dimension: referrer_domain
     type: string
     sql: ${TABLE}.ref_domain
