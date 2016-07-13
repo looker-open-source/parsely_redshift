@@ -309,6 +309,7 @@
     type: count_distinct
     sql: ${visitor_site_id}
     view_label: "Metrics"
+    drill_fields: [visitor_ip]
 
   - measure: visitors_mobile
     type: count_distinct
