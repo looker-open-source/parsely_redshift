@@ -4,26 +4,26 @@
   rows:
     - elements: [distinct_visitors, avg_engage_tm, total_pageviews_1]
       height: 200
-    
+
     - elements: [daily_metrics]
       height: 400
-      
+
     - elements: [article_info, referrers]
       height: 400
 
   filters:
-  
+
   - name: date
     type: date_filter
-  
+
   - name: title
     type: field_filter
     explore: events
     field: events.meta_title
     default_value: "What I Know"
-  
+
   elements:
-  
+
     - name: distinct_visitors
       title: Distinct Visitors
       type: single_value
@@ -53,7 +53,7 @@
       font_size: small
       width: 3
       height: 2
-    
+
     - name: avg_engage_tm
       title: Average Engaged Time
       type: single_value
@@ -83,7 +83,7 @@
       font_size: small
       width: 3
       height: 2
-    
+
     - name: total_pageviews_1
       title: Total Pageviews
       type: single_value
@@ -94,10 +94,10 @@
       limit: 500
       font_size: medium
       text_color: black
-      listen: 
+      listen:
         date: events.action_date
         title: events.meta_title
-    
+
     - name: daily_metrics
       title: Daily Visitors and Pageviews
       type: looker_line
@@ -132,7 +132,7 @@
       colors: ['#388f5b', '#2a85a9']
       width: 12
       height: 3
-    
+
     - name: article_info
       title: Article Info
       type: looker_single_record
@@ -164,7 +164,7 @@
       point_style: none
       interpolation: linear
       colors: ['#388f5b', '#2a85a9']
-    
+
     - name: referrers
       title: Top 15 External Referrers
       type: looker_bar
