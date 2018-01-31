@@ -10,5 +10,5 @@
 | page_engagement_facts | Derived table to aggregate information around engagement(leverages heartbeat action type and engaged_time_inc dimension) |
 
 ## References:
-- [Parse.ly's Information on the Schema](https://www.parsely.com/help/rawdata/schemas/)
+- [Parse.ly's Information on the Schema](https://www.parsely.com/help/rawdata/schema/)
 - [Parse.ly's Metric Guide](https://www.parsely.com/help/rawdata/metrics/)
